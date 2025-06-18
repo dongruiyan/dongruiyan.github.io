@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    
+    <!-- 使用的一些资源 -->
+    <link rel="stylesheet" href="styles/style.css"> <!-- 自定义样式表 -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS 工具库 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"> <!-- Font Awesome 图标库 -->
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-blue-600 text-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <!-- 网站标题 -->
+                <a href="index.html" class="font-bold text-xl">董瑞研个人网站</a>
+                
+                <!-- 桌面端导航链接 -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-blue-200">首页</a>
+                    <a href="about.html" class="text-blue-200">个人简介</a>
+                    <a href="travel.html" class="text-blue-200">旅游爱好</a>
+                    <a href="contact.html" class="text-blue-200">联系方式</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-xl" id="menuBtn">☰</button>
+            </div>
+        </div>
+        
+        <!-- 移动端下拉菜单 (默认隐藏) -->
+        <div class="md:hidden hidden bg-blue-700" id="mobileMenu">
+            <div class="container py-2 flex flex-col space-y-2">
+                <a href="index.html" class="py-2 px-4 bg-blue-500">首页</a>
+                <a href="about.html" class="py-2 px-4 bg-blue-500">个人简介</a>
+                <a href="travel.html" class="py-2 px-4 bg-blue-500">旅游爱好</a>
+                <a href="contact.html" class="py-2 px-4 bg-blue-500">联系方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <!--主体内容区域 -->
+    <header class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-700 text-white pt-16">
+        <div class="container mx-auto px-4 text-center">
+            <!-- 主标题 -->
+            <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-bold mb-6">欢迎来到我的个人网站</h1>
+            
+            <!-- 副标题 -->
+            <p class="text-[clamp(1.2rem,3vw,1.8rem)] opacity-90 mb-10 max-w-2xl mx-auto">
+                这里有我的相关信息，来了解我吧！
+            </p>
+            
+            <!-- 导航按钮组 -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="about.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold">
+                    个人简介
+                </a>
+                <a href="travel.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold">
+                    旅游爱好
+                </a>
+                <a href="contact.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold">
+                    联系方式
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页脚区域 -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>董瑞研个人网站</p>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换功能
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden'); // 切换菜单显示/隐藏
+        });
+    </script>
+</body>
+</html>
